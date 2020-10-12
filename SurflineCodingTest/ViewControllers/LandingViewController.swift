@@ -19,7 +19,7 @@ class LandingViewController: UIViewController,MKMapViewDelegate{
     @IBOutlet weak var MapView: MKMapView!
     let reigonKM: Double = 1000
     let locationManager = CLLocationManager()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         MapView.delegate = self
@@ -98,4 +98,5 @@ extension LandingViewController: CLLocationManagerDelegate{
         checkLocationAuth()
     }
 }
+
 

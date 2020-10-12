@@ -16,6 +16,8 @@
 		7B086CDE25347776003A66F4 /* SurflineCodingTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B086CDD25347776003A66F4 /* SurflineCodingTestTests.swift */; };
 		7B086CE925347776003A66F4 /* SurflineCodingTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B086CE825347776003A66F4 /* SurflineCodingTestUITests.swift */; };
 		7B086CF925348D11003A66F4 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B086CF825348D11003A66F4 /* ListViewController.swift */; };
+		7B9E3BA02534EE0D00DBF950 /* LodgesDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E3B9F2534EE0D00DBF950 /* LodgesDataModel.swift */; };
+		7B9E3BA52534F34D00DBF950 /* LodgeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B9E3BA42534F34D00DBF950 /* LodgeRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		7B086CE825347776003A66F4 /* SurflineCodingTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurflineCodingTestUITests.swift; sourceTree = "<group>"; };
 		7B086CEA25347776003A66F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7B086CF825348D11003A66F4 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		7B9E3B9F2534EE0D00DBF950 /* LodgesDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgesDataModel.swift; sourceTree = "<group>"; };
+		7B9E3BA42534F34D00DBF950 /* LodgeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LodgeRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +138,8 @@
 		7B086CF625348C9D003A66F4 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				7B9E3B9F2534EE0D00DBF950 /* LodgesDataModel.swift */,
+				7B9E3BA42534F34D00DBF950 /* LodgeRequest.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -279,9 +285,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7B086CCB2534776F003A66F4 /* LandingViewController.swift in Sources */,
+				7B9E3BA02534EE0D00DBF950 /* LodgesDataModel.swift in Sources */,
 				7B086CC72534776F003A66F4 /* AppDelegate.swift in Sources */,
 				7B086CF925348D11003A66F4 /* ListViewController.swift in Sources */,
 				7B086CC92534776F003A66F4 /* SceneDelegate.swift in Sources */,
+				7B9E3BA52534F34D00DBF950 /* LodgeRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
