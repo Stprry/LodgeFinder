@@ -38,7 +38,7 @@
                                             <color key="titleColor" red="0.0" green="0.57254901960000004" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="WzY-zH-GHw" kind="presentation" id="Q3V-oe-4Wf"/>
+                                            <segue destination="8Wb-hK-JGo" kind="presentation" id="INe-9b-1OQ"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -46,14 +46,21 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-EM-dfR">
                                 <rect key="frame" x="50" y="54" width="314" height="90"/>
                                 <subviews>
-                                    <searchBar contentMode="redraw" placeholder="Location Search Lat/Lon" translatesAutoresizingMaskIntoConstraints="NO" id="ODo-Zg-9eb">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="45"/>
-                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lat" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFH-Ua-i47">
+                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                    </searchBar>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Long" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSv-39-7qy">
+                                        <rect key="frame" x="0.0" y="30" width="314" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="60j-WX-7Vz">
-                                        <rect key="frame" x="0.0" y="45" width="314" height="45"/>
-                                        <color key="backgroundColor" systemColor="groupTableViewBackgroundColor"/>
+                                        <rect key="frame" x="0.0" y="60" width="314" height="30"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Use current location"/>
                                         <connections>
                                             <action selector="CurrentLocationBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvA-OI-6Si"/>
@@ -86,8 +93,6 @@
                         <outlet property="ClearButton" destination="wg0-B8-xxz" id="GTg-iv-gac"/>
                         <outlet property="CurrentLocationButton" destination="60j-WX-7Vz" id="8E8-6G-kHi"/>
                         <outlet property="MapView" destination="3Mi-u9-QZf" id="zQT-zL-VPX"/>
-                        <outlet property="SearchBar" destination="ODo-Zg-9eb" id="Rs2-7Q-XKh"/>
-                        <outlet property="SearchButton" destination="bcm-uG-8sp" id="7I8-Zv-7ft"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -95,58 +100,36 @@
             <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
         </scene>
         <!--List View Controller-->
-        <scene sceneID="X2V-Go-eTa">
+        <scene sceneID="LiN-sL-9gg">
             <objects>
-                <viewController id="WzY-zH-GHw" customClass="ListViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VTi-mD-nJd">
+                <tableViewController id="8Wb-hK-JGo" customClass="ListViewController" customModule="SurflineCodingTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MuU-vW-Ws3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fRj-Hj-Dd9">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="2Oe-vM-2D2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="5F4-5r-Yk0">
-                                        <rect key="frame" x="0.0" y="72" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5F4-5r-Yk0" id="RLB-sD-Kqc">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="4U6-ot-P33"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="fRj-Hj-Dd9" firstAttribute="leading" secondItem="4U6-ot-P33" secondAttribute="leading" id="QUW-R1-daQ"/>
-                            <constraint firstItem="fRj-Hj-Dd9" firstAttribute="top" secondItem="4U6-ot-P33" secondAttribute="top" id="RSD-H4-ZRd"/>
-                            <constraint firstItem="4U6-ot-P33" firstAttribute="bottom" secondItem="fRj-Hj-Dd9" secondAttribute="bottom" id="Ubk-YL-lQg"/>
-                            <constraint firstItem="4U6-ot-P33" firstAttribute="trailing" secondItem="fRj-Hj-Dd9" secondAttribute="trailing" id="YS6-Jz-evo"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="searchBar" destination="2Oe-vM-2D2" id="YC9-bx-6my"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="HrJ-OL-2ry" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ByW-k8-t8C">
+                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ByW-k8-t8C" id="4vz-E0-WxR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <accessibility key="accessibilityConfiguration" identifier="Cell"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8Wb-hK-JGo" id="bX7-zQ-gK2"/>
+                            <outlet property="delegate" destination="8Wb-hK-JGo" id="XIC-QZ-9qv"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BY4-x7-H28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1071" y="121"/>
+            <point key="canvasLocation" x="946" y="121"/>
         </scene>
     </scenes>
     <resources>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="groupTableViewBackgroundColor">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

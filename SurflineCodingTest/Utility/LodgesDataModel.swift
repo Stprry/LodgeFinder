@@ -8,21 +8,18 @@
 
 import Foundation
 
-struct LodgeResponse:Decodable {
-    var results:Lodges
+
+struct LodgeResponse:Decodable{
+    var status:String = ""
+    var results:[LodgeDetail]?
 }
 
-struct Lodges:Decodable {
-    var lodges:[LodgeDetails]
+struct LodgeDetail: Decodable {
+    var name:String?
+    var opening_hours:OpenNow?
+    var rating:Double?
+    var user_ratings_total:Int?
 }
-struct LodgeDetails:Decodable {
-    var opening_hours:LodgeOpen
-    var name:String
-    var rating:Double
-    
+struct OpenNow: Decodable{
+    var open_now:Bool?
 }
-struct LodgeOpen:Decodable {
-    var open_now:Bool
-    
-}
-

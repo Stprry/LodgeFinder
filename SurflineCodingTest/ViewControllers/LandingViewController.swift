@@ -25,8 +25,8 @@ class LandingViewController: UIViewController,MKMapViewDelegate{
         MapView.delegate = self
         checkLocationAuth()
         MapView.showsUserLocation = true // show location on map.
-
     }
+    
     //MARK: -- Button Actions
     @IBAction func CurrentLocationBtn(_ sender: Any) {
         let center = getCenterLocation(for: MapView)
