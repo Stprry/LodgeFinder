@@ -1,4 +1,4 @@
-# SurflineCodingTest
+# SurflineTest
 SurflineCodingTest
 
 How to run:
