@@ -10,16 +10,20 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class LandingViewController: UIViewController,MKMapViewDelegate{
 
-    @IBOutlet weak var SearchBar: UISearchBar!
+class LandingViewController: UIViewController,MKMapViewDelegate{
+  
+    @IBOutlet weak var latFeild: UITextField!
+    @IBOutlet weak var longFeild: UITextField!
     @IBOutlet weak var CurrentLocationButton: UIButton!
-    @IBOutlet weak var SearchButton: UIButton!
     @IBOutlet weak var ClearButton: UIButton!
     @IBOutlet weak var MapView: MKMapView!
+  
     let reigonKM: Double = 1000
     let locationManager = CLLocationManager()
-
+    var delegate:DataDelegate?
+    var lat: String = ""
+    var long: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
         MapView.delegate = self
@@ -28,11 +32,26 @@ class LandingViewController: UIViewController,MKMapViewDelegate{
     }
     
     //MARK: -- Button Actions
+    @IBAction func SearchBtnPress(_ sender: Any) {
+        if latFeild.text == "" || longFeild.text == ""{
+            // do alert saying must contain location ideally we use regex
+        }else{
+            lat = latFeild.text!
+            long = longFeild.text!
+        }
+        delegate?.passLatLong(lat:lat,long:long) // pass value off text feilds
+    }
+    
     @IBAction func CurrentLocationBtn(_ sender: Any) {
         let center = getCenterLocation(for: MapView)
-        let lat: String = String(format:"%f", center.coordinate.latitude)
-        let long: String = String(format: "%f", center.coordinate.longitude)
-        SearchBar.placeholder = "\(lat) \(long)"
+        lat = String(format:"%f", center.coordinate.latitude)
+        long = String(format: "%f", center.coordinate.longitude)
+        latFeild.text = lat
+        longFeild.text = long
+    }
+    @IBAction func ClearBtnPress(_ sender: Any) {
+        longFeild.text = ""
+        latFeild.text = ""
     }
     
     //MARK: -- Location Set up and authorisation

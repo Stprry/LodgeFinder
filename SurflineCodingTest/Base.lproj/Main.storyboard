@@ -31,6 +31,9 @@
                                         <state key="normal" title="Clear">
                                             <color key="titleColor" systemColor="systemRedColor"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ClearBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0vI-t6-QqY"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bcm-uG-8sp">
                                         <rect key="frame" x="207" y="0.0" width="207" height="30"/>
@@ -38,7 +41,8 @@
                                             <color key="titleColor" red="0.0" green="0.57254901960000004" blue="0.27058823529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="8Wb-hK-JGo" kind="presentation" id="INe-9b-1OQ"/>
+                                            <action selector="SearchBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="449-3l-QTU"/>
+                                            <segue destination="8Wb-hK-JGo" kind="presentation" id="yUJ-Cr-Clp"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -93,6 +97,8 @@
                         <outlet property="ClearButton" destination="wg0-B8-xxz" id="GTg-iv-gac"/>
                         <outlet property="CurrentLocationButton" destination="60j-WX-7Vz" id="8E8-6G-kHi"/>
                         <outlet property="MapView" destination="3Mi-u9-QZf" id="zQT-zL-VPX"/>
+                        <outlet property="latFeild" destination="LFH-Ua-i47" id="Ab8-tO-ntY"/>
+                        <outlet property="longFeild" destination="cSv-39-7qy" id="gTm-6N-e3Z"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -126,7 +132,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BY4-x7-H28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="946" y="121"/>
+            <point key="canvasLocation" x="1025" y="121"/>
         </scene>
     </scenes>
     <resources>

@@ -13,7 +13,8 @@ enum LodgeError:Error {
 }
 struct LodgeRequest {
     let resourceURL:URL
-    let API_KEY = ""
+    let API_KEY = "AIzaSyCI6sXu2GiN9fAKDD5PVeFxweGQG79QMKE" // change to your api key
+
     init(lat:String,long:String) {
         let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=1000&type=lodging&keyword=surf&key=\(API_KEY)"
         

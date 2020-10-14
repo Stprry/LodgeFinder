@@ -8,11 +8,17 @@
 
 import Foundation
 import UIKit
+protocol DataDelegate {
+    func passLatLong(lat: String,long:String)
+}
 
-class ListViewController: UITableViewController {
-
-    var lat = "50.4164582"
-    let long = "-5.100202299999978"
+class ListViewController: UITableViewController,DataDelegate{
+//MARK:-- Var / Let Declarations
+    var passedLat = ""
+    var passedLong = ""
+    ///var Testlat = "50.4164582"
+    ///var Testlong = "-5.100202299999978"
+//MARK:-- Computed vars
     var listOfLodges = [LodgeDetail](){
         didSet{
             DispatchQueue.main.async {
@@ -23,9 +29,15 @@ class ListViewController: UITableViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
         loadData()
     }
-    
+//MARK:-- Setting up Table view
+    @objc func setDelegate(){
+        let landing = LandingViewController()
+        landing.delegate = self
+    }
+ 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return listOfLodges.count
     }
@@ -38,13 +50,15 @@ class ListViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
         let lodge = listOfLodges[indexPath.row]
         let rating: String = String(lodge.rating!)//careful
+        print(rating)
         cell.textLabel?.text = rating
         return cell
     }
 }
+//MARK:-- Functions called on did load
 extension ListViewController{
     func loadData(){
-        let lodgeRequest = LodgeRequest(lat: "50.4164582", long: "-5.100202299999978")
+        let lodgeRequest = LodgeRequest(lat:passedLat, long:passedLong)
         lodgeRequest.getLodges{[weak self] result in
                     switch result{
                     case.failure(let error):
@@ -54,4 +68,9 @@ extension ListViewController{
                     }
             }
     }
+    func passLatLong(lat: String, long: String) {
+        passedLat = lat
+        passedLong = long
+    }
 }
+
