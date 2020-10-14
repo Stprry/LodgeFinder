@@ -5,6 +5,8 @@
 //  Created by Sam Perry on 12/10/2020.
 //  Copyright © 2020 Sam Perry. All rights reserved.
 //
+///var Testlat = "50.4164582"
+///var Testlong = "-5.100202299999978"
 
 import Foundation
 import UIKit
@@ -16,8 +18,7 @@ class ListViewController: UITableViewController,DataDelegate{
 //MARK:-- Var / Let Declarations
     var passedLat = ""
     var passedLong = ""
-    ///var Testlat = "50.4164582"
-    ///var Testlong = "-5.100202299999978"
+ 
 //MARK:-- Computed vars
     var listOfLodges = [LodgeDetail](){
         didSet{
@@ -27,6 +28,7 @@ class ListViewController: UITableViewController,DataDelegate{
             }
         }
     }
+//MARK: -- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
@@ -49,9 +51,11 @@ class ListViewController: UITableViewController,DataDelegate{
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
         let lodge = listOfLodges[indexPath.row]
-        let rating: String = String(lodge.rating!)//careful
+        let rating: String = String(lodge.rating!)//careful force unwrapping something that might not be there could cause an error
         print(rating)
-        cell.textLabel?.text = rating
+        cell.textLabel?.text = lodge.name
+        cell.detailTextLabel?.text = "Lodge Rating \(rating) Lodge Open now \(String(describing: lodge.opening_hours?.open_now))"
+        
         return cell
     }
 }

@@ -49,6 +49,7 @@ class LandingViewController: UIViewController,MKMapViewDelegate{
         latFeild.text = lat
         longFeild.text = long
     }
+    
     @IBAction func ClearBtnPress(_ sender: Any) {
         longFeild.text = ""
         latFeild.text = ""

@@ -35,6 +35,7 @@ struct LodgeRequest {
                 let lodgeResponse  = try decoder.decode(LodgeResponse.self, from: jsonData)
                 let lodgeDetails = lodgeResponse.results
                 completion(.success(lodgeDetails!))// might break it check this
+                print(lodgeDetails!)
             }catch{
                 completion(.failure(.canNotProcessData))
             }

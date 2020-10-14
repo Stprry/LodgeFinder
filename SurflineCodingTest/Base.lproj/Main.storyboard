@@ -42,7 +42,7 @@
                                         </state>
                                         <connections>
                                             <action selector="SearchBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="449-3l-QTU"/>
-                                            <segue destination="8Wb-hK-JGo" kind="presentation" id="yUJ-Cr-Clp"/>
+                                            <segue destination="8Wb-hK-JGo" kind="show" id="dHh-Ht-h31"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="ByW-k8-t8C">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="ByW-k8-t8C">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ByW-k8-t8C" id="4vz-E0-WxR">
@@ -129,6 +129,7 @@
                             <outlet property="delegate" destination="8Wb-hK-JGo" id="XIC-QZ-9qv"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="8No-cj-Qo8"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BY4-x7-H28" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
