@@ -1,5 +1,5 @@
-# SurflineTest
-SurflineCodingTest
+# SL
+
 
 How to run:
 open Utility->Lodgerequest.swift-> line 16 insert api key used by tester in the let API_KEY, the one being used there has been deactivated.
