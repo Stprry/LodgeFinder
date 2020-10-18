@@ -18,13 +18,16 @@ class ListViewController: UITableViewController,DataDelegate{
 //MARK:-- Var / Let Declarations
     var passedLat = ""
     var passedLong = ""
- 
+    var name = ""
+    
 //MARK:-- Computed vars
     var listOfLodges = [LodgeDetail](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
                 self.navigationItem.title = "\(self.listOfLodges.count) lodges found"
+                print("\(self.listOfLodges.count) lodges found")
+                print(" ")
             }
         }
     }
@@ -49,11 +52,18 @@ class ListViewController: UITableViewController,DataDelegate{
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
-        let lodge = listOfLodges[indexPath.row]
+        let lodge = listOfLodges[indexPath.section]
         let rating: String = String(lodge.rating!)//careful force unwrapping something that might not be there could cause an error
         print(rating)
-        cell.textLabel?.text = lodge.name
+        print(lodge.name)
+        
+        if let name = lodge.name {
+            cell.textLabel?.text = name
+        }
+        
+      
         cell.detailTextLabel?.text = "Lodge Rating \(rating) Lodge Open now \(String(describing: lodge.opening_hours?.open_now))"
         
         return cell
