@@ -53,19 +53,32 @@ class ListViewController: UITableViewController,DataDelegate{
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath) // setting up cell
         let lodge = listOfLodges[indexPath.section]
-        let rating: String = String(lodge.rating!)//careful force unwrapping something that might not be there could cause an error
-        print(rating)
-        print(lodge.name)
+        print(lodge.name as Any)// print for debugging
         
-        if let name = lodge.name {
-            cell.textLabel?.text = name
+        var rate = ""
+        if let rating: String = String(lodge.rating!) {
+            rate = rating
         }
         
-      
-        cell.detailTextLabel?.text = "Lodge Rating \(rating) Lodge Open now \(String(describing: lodge.opening_hours?.open_now))"
+        var open = ""
+        if (lodge.opening_hours?.open_now) != nil {
+                open = "open"
+        }else{
+            open = "shut"
+        }
         
+        if let name = lodge.name {
+            let star = "⭐️"
+            cell.textLabel?.numberOfLines = 0
+            cell.textLabel?.lineBreakMode = .byWordWrapping
+            cell.textLabel?.text = """
+                \(name).
+                \(star) \(rate).
+                is now \(open).
+                """
+        }
         return cell
     }
 }
