@@ -5,20 +5,15 @@
 //  Created by Sam Perry on 12/10/2020.
 //  Copyright © 2020 Sam Perry. All rights reserved.
 //
-///var Testlat = "50.4164582"
-///var Testlong = "-5.100202299999978"
-
 import Foundation
 import UIKit
-protocol DataDelegate {
-    func passLatLong(lat: String,long:String)
-}
-
-class ListViewController: UITableViewController,DataDelegate{
+class ListViewController: UITableViewController{
 //MARK:-- Var / Let Declarations
-    var passedLat = ""
-    var passedLong = ""
+    var passedLat: String = ""
+    var passedLong: String = ""
     var name = ""
+    var open = ""
+    var rate = ""
     
 //MARK:-- Computed vars
     var listOfLodges = [LodgeDetail](){
@@ -34,15 +29,10 @@ class ListViewController: UITableViewController,DataDelegate{
 //MARK: -- ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
         loadData()
     }
+    
 //MARK:-- Setting up Table view
-    @objc func setDelegate(){
-        let landing = LandingViewController()
-        landing.delegate = self
-    }
- 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return listOfLodges.count
     }
@@ -57,12 +47,10 @@ class ListViewController: UITableViewController,DataDelegate{
         let lodge = listOfLodges[indexPath.section]
         print(lodge.name as Any)// print for debugging
         
-        var rate = ""
         if let rating: String = String(lodge.rating!) {
             rate = rating
         }
         
-        var open = ""
         if (lodge.opening_hours?.open_now) != nil {
                 open = "open"
         }else{
@@ -84,20 +72,17 @@ class ListViewController: UITableViewController,DataDelegate{
 }
 //MARK:-- Functions called on did load
 extension ListViewController{
-    func loadData(){
+    func loadData() {
+        print("Passed Data print: Lat: \(passedLat), Long: \(passedLong)")
         let lodgeRequest = LodgeRequest(lat:passedLat, long:passedLong)
         lodgeRequest.getLodges{[weak self] result in
-                    switch result{
-                    case.failure(let error):
-                        print(error)
-                    case.success(let lodges):
-                        self?.listOfLodges = lodges
-                    }
+            switch result{
+            case.failure(let error):
+                print(error)
+            case.success(let lodges):
+                self?.listOfLodges = lodges
             }
-    }
-    func passLatLong(lat: String, long: String) {
-        passedLat = lat
-        passedLong = long
+        }
     }
 }
 

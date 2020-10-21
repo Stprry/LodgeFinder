@@ -42,7 +42,6 @@
                                         </state>
                                         <connections>
                                             <action selector="SearchBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="449-3l-QTU"/>
-                                            <segue destination="8Wb-hK-JGo" kind="show" id="dHh-Ht-h31"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -54,7 +53,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Long" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cSv-39-7qy">
                                         <rect key="frame" x="0.0" y="30" width="314" height="30"/>
@@ -75,15 +74,28 @@
                                     <constraint firstAttribute="height" constant="90" id="EPy-2r-JYO"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXU-6Y-u8c">
+                                <rect key="frame" x="163.5" y="164" width="87" height="30"/>
+                                <state key="normal" title="Test co-ords">
+                                    <color key="titleColor" systemColor="systemRedColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="testBtnPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qEp-ue-fId"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="bpO-EM-dfR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="0Ot-VL-M3v"/>
                             <constraint firstItem="Ujy-ft-4uy" firstAttribute="top" secondItem="3Mi-u9-QZf" secondAttribute="bottom" id="0fE-cm-YfS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IXU-6Y-u8c" secondAttribute="trailing" constant="163.5" id="AMr-20-4ab"/>
+                            <constraint firstItem="IXU-6Y-u8c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="E5O-nW-mzr"/>
                             <constraint firstItem="3Mi-u9-QZf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="SkV-sV-TBY"/>
                             <constraint firstItem="bpO-EM-dfR" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="TBS-bA-TYM"/>
                             <constraint firstItem="3Mi-u9-QZf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="cDQ-0Y-hr8"/>
+                            <constraint firstItem="IXU-6Y-u8c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="163.5" id="ccL-Dl-aY1"/>
+                            <constraint firstItem="IXU-6Y-u8c" firstAttribute="top" secondItem="bpO-EM-dfR" secondAttribute="bottom" constant="20" id="dvg-h7-hFc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bpO-EM-dfR" secondAttribute="trailing" constant="50" id="f0k-Ia-0uu"/>
                             <constraint firstItem="bpO-EM-dfR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gHf-ck-LjE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3Mi-u9-QZf" secondAttribute="trailing" id="hK8-Mw-Svx"/>
@@ -99,6 +111,8 @@
                         <outlet property="MapView" destination="3Mi-u9-QZf" id="zQT-zL-VPX"/>
                         <outlet property="latFeild" destination="LFH-Ua-i47" id="Ab8-tO-ntY"/>
                         <outlet property="longFeild" destination="cSv-39-7qy" id="gTm-6N-e3Z"/>
+                        <outlet property="testBtn" destination="IXU-6Y-u8c" id="rdL-yd-EZY"/>
+                        <segue destination="8Wb-hK-JGo" kind="presentation" identifier="dataSeg" id="cfH-kX-5c5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

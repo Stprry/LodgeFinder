@@ -16,8 +16,8 @@ struct LodgeRequest {
     let API_KEY = "" // MARK:-- change to your api key
 
     init(lat:String,long:String) {
-//        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=1000&type=lodging&keyword=surf&key=\(API_KEY)"
-        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=50.4164582,-5.100202299999978&radius=1000&type=surfing&keyword=lodge&key="//MARK:-- ADD API KEY
+        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(lat),\(long)&radius=1000&type=lodging&keyword=surf&key=\(API_KEY)"
+//        let resourceString = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=50.4164582,-5.100202299999978&radius=1000&type=surfing&keyword=lodge&key=AIzaSyBOxY1PjMtlbaXI7yLzw3PP79NVM50UUeg"//MARK:-- ADD API KEY
         
         guard let resourceURL = URL(string: resourceString) else {fatalError()}
         self.resourceURL = resourceURL
