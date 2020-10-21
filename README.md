@@ -1,20 +1,18 @@
 # SL
 
 
-How to run:
-open Utility->Lodgerequest.swift-> line 16 insert api key used by tester in the let API_KEY, the one being used there has been deactivated.
+# How to run:
+open Utility->Lodgerequest.swift->  insert api key used by tester in the let API_KEY, the one being used there has been deactivated.
 
-I cannot seem to get the data to load into the tableview.
+# How long did you spend completing the assignment? How (if at all) would you change your solution if you had more time?
 
+The main part of the project was completed in a couple of evenings (maybe 10 hours) i would make it a bit more aesthetically pleasing.
 
-How long did you spend completing the assignment? How (if at all) would you change your solution if you had more time?
+# Can you describe a feature (perhaps with some reference code) that exists in your chosen programming language that you found particularly useful?
 
-The main part of the project was completed in a couple of evenings (maybe 8 hours) with the issue im having persisting throughout the day
+the Json decoder works well, and desearlizing it into structures makes utalising the api data easy
 
-Can you describe a feature (perhaps with some reference code) that exists in your chosen programming language that you found particularly useful?
+# How would you track down a performance issue with yours or another developer's code?
+I have had errors with my own which have been resolved by setting break points prints and watching changes in certain variables and functions to resolve the issue, a good bit of practise is to have your own custom error structure for errors you could pre predict to find the errors easier. 
 
-the Json decoder works pretty well when you can get it working, for me im struggling to get it to show the data in the table views at the moment
-
-How would you track down a performance issue with yours or another developer's code?
-I have tried breakpoints, prints but just cannot seem to find the error. 
 
